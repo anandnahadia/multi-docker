@@ -4,7 +4,7 @@ services:
 before_install:
  - docker build -t muliti-docker -f ./client/Dockerfile.dev ./client
 script : 
-    - docker run muliti-docker npm run test -- --coverage
+    - docker run -e CI=true muliti-docker npm run test -- --coverage
 
 after_success:
     - docker build -t multi-client ./client
