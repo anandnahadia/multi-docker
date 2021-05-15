@@ -7,14 +7,14 @@ script :
     - docker run -e CI=true muliti-docker npm run test
 
 after_success:
-    - docker build -t anandnahadia98/multi-client ./client
-    - docker build -t anandnahadia98/multi-nginx ./nginx
-    - docker build -t anandnahadia98/multi-server ./server
-    - docker build -t anandnahadia98/multi-worker ./worker 
+    - docker build -t anandkumar98/multi-client ./client
+    - docker build -t anandkumar98/multi-nginx ./nginx
+    - docker build -t anandkumar98/multi-server ./server
+    - docker build -t anandkumar98/multi-worker ./worker 
     # Log in to the Docker CLI
     - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
     # Take those images and push to docker hub
-    - docker push anandnahadia98/multi-client 
-    - docker push anandnahadia98/multi-nginx 
-    - docker push anandnahadia98/multi-server 
-    - docker push anandnahadia98/multi-worker 
+    - docker push anandkumar98/multi-client 
+    - docker push anandkumar98/multi-nginx 
+    - docker push anandkumar98/multi-server 
+    - docker push anandkumar98/multi-worker 
